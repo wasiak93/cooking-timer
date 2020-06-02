@@ -1,12 +1,14 @@
 import React from "react";
+import Button from "../Button/Button";
 
 const Main = ({ start, handlerStop, handlerStart, timerValue }) => {
   return (
     <main className="main">
-      <button onClick={start ? handlerStop : handlerStart}>
-        {start ? "Stop" : "Start"}
-      </button>
-
+      <Button
+        start={start}
+        handlerStart={handlerStart}
+        handlerStop={handlerStop}
+      />
       {timerValue <= 0 ? (
         <>
           <p>0</p>
