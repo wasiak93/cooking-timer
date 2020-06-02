@@ -1,0 +1,9 @@
+.clock {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: grey;
+}
+
+.clock__item {
+  background-color: aqua;
+}

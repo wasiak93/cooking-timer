@@ -5,7 +5,7 @@ import Main from "./Main/Main";
 
 const App = () => {
   const [start, setStart] = useState(false);
-  let [timerValue, setTimerValue] = useState(5);
+  let [timerValue, setTimerValue] = useState(3600);
   const [intervalId, setIntervalId] = useState(0);
 
   const changeTime = () => {
