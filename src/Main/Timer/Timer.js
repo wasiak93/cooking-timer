@@ -1,15 +1,18 @@
 import React from "react";
 
-import Button from "../../Button/Button";
 import Clock from "./Clock/Clock";
-const Timer = ({ timerValue, start, handlerStart, handlerStop }) => {
+import Title from "./Title/Title";
+import Buttons from "./Buttons/Buttons";
+
+const Timer = ({ timerValue, activity, handlerButtonStart, handlerClear }) => {
   return (
     <div className="timer">
+      <Title />
       <Clock timerValue={timerValue} />
-      <Button
-        start={start}
-        handlerStart={handlerStart}
-        handlerStop={handlerStop}
+      <Buttons
+        activity={activity}
+        handlerButtonStart={handlerButtonStart}
+        handlerClear={handlerClear}
       />
     </div>
   );

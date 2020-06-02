@@ -4,7 +4,8 @@ import "./App.css";
 import Main from "./Main/Main";
 
 const App = () => {
-  const [start, setStart] = useState(false);
+  const [activity, setActivity] = useState("start");
+  let [startTime, setStartTime] = useState(3600);
   let [timerValue, setTimerValue] = useState(3600);
   const [intervalId, setIntervalId] = useState(0);
 
@@ -15,11 +16,16 @@ const App = () => {
     let interval;
     interval = setInterval(() => changeTime(), 1000);
     setIntervalId(interval);
-    setStart(true);
+    setActivity("stop");
   };
   const handlerStop = () => {
-    setStart(false);
+    setActivity("start");
     clearInterval(intervalId);
+  };
+  const handlerClear = () => {
+    setTimerValue(startTime);
+    clearInterval(intervalId);
+    setActivity("start");
   };
   return (
     <div className="app">
@@ -27,9 +33,9 @@ const App = () => {
         form
       </form>
       <Main
-        start={start}
-        handlerStart={handlerStart}
-        handlerStop={handlerStop}
+        activity={activity}
+        handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
+        handlerClear={handlerClear}
         timerValue={timerValue}
       />
     </div>
