@@ -5,8 +5,8 @@ import Main from "./Main/Main";
 
 const App = () => {
   const [activity, setActivity] = useState("start");
-  const [startTime, setStartTime] = useState(45667);
-  let [timerValue, setTimerValue] = useState(45667);
+  const [startTime, setStartTime] = useState(0);
+  let [timerValue, setTimerValue] = useState(0);
   const [intervalId, setIntervalId] = useState(0);
   const [mealsArray, setMealsArray] = useState([
     { id: 0, name: "soft boiled eggs", time: 18000 },
@@ -54,6 +54,7 @@ const App = () => {
         mealsArray={mealsArray}
         handlerMealButton={handlerMealButton}
       />
+      {timerValue <= 0 && <h1>egg is ready!!!!</h1>}
     </div>
   );
 };

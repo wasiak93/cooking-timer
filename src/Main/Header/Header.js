@@ -1,10 +1,14 @@
 import React from "react";
+import Button from "../../Buttons/Button/Button";
 
 const Header = ({ mealsArray, handlerMealButton }) => {
   const meals = mealsArray.map(({ id, time, name }) => (
-    <button key={id} time={time} onClick={() => handlerMealButton(time)}>
-      {name}
-    </button>
+    <Button
+      key={id}
+      time={time}
+      handler={() => handlerMealButton(time)}
+      activity={name}
+    />
   ));
   return <div className="header">{meals}</div>;
 };

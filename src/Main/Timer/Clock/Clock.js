@@ -5,6 +5,7 @@ const Clock = ({ timerValue }) => {
   // const hours = Math.floor(timerValue / (60 * 60))
   //   .toString()
   //   .padStart(2, 0);
+
   const minutes = Math.floor((timerValue / 60 / 100) % 60)
     .toString()
     .padStart(2, 0);
@@ -14,7 +15,6 @@ const Clock = ({ timerValue }) => {
   const cseconds = Math.floor(timerValue % 100)
     .toString()
     .padStart(2, 0);
-  console.log(minutes);
   return (
     <div className="clock">
       {/* <div className="clock__item">{hours}</div> */}
