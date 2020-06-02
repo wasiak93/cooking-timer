@@ -1,29 +1,37 @@
 import React, { useState } from "react";
 
 import "./App.css";
+import Main from "./Main/Main";
 
 const App = () => {
   const [start, setStart] = useState(false);
-  let [timerValue, setTimerValue] = useState(120);
+  let [timerValue, setTimerValue] = useState(5);
+  const [intervalId, setIntervalId] = useState(0);
 
   const changeTime = () => {
     setTimerValue(--timerValue);
   };
-  const hanndlerTimer = () => {
-    setInterval(() => changeTime(), 1000);
+  const handlerStart = () => {
+    let interval;
+    interval = setInterval(() => changeTime(), 1000);
+    setIntervalId(interval);
     setStart(true);
+  };
+  const handlerStop = () => {
+    setStart(false);
+    clearInterval(intervalId);
   };
   return (
     <div className="app">
       <form action="" className="form">
         form
       </form>
-
-      <main className="main">
-        {start ? null : <button onClick={() => hanndlerTimer()}>Start</button>}
-        {timerValue}
-        {timerValue <= 0 ? <div>time is over</div> : null}
-      </main>
+      <Main
+        start={start}
+        handlerStart={handlerStart}
+        handlerStop={handlerStop}
+        timerValue={timerValue}
+      />
     </div>
   );
 };
