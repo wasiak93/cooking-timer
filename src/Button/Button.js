@@ -3,7 +3,10 @@ import "./Button.css";
 
 const Button = ({ activity, handler, active }) => {
   return (
-    <button onClick={handler} className={active ? "active" : null}>
+    <button
+      onClick={handler}
+      className={`button ${active ? "button--active" : ""}`}
+    >
       {activity}
     </button>
   );

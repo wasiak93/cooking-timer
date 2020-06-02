@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../Button/Button";
+import "./Header.css";
 
 const Header = ({ mealsArray, handlerMealButton, activeButtonId }) => {
   const meals = mealsArray.map(({ id, time, name }) => (

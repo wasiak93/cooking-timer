@@ -1,6 +1,7 @@
 import React from "react";
 import Timer from "./Timer/Timer";
 import Header from "./Header/Header";
+import "./Main.css";
 
 const Main = ({
   activity,

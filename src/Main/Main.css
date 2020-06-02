@@ -1,0 +1,7 @@
+.main {
+  background-color: grey;
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
