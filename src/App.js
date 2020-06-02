@@ -4,10 +4,6 @@ import "./App.css";
 import Main from "./Main/Main";
 
 const App = () => {
-  const [activity, setActivity] = useState("start");
-  const [startTime, setStartTime] = useState(0);
-  let [timerValue, setTimerValue] = useState(0);
-  const [intervalId, setIntervalId] = useState(0);
   const [mealsArray, setMealsArray] = useState([
     { id: 0, name: "soft boiled eggs", time: 18000 },
     { id: 1, name: "medium boiled eggs", time: 30000 },
@@ -16,6 +12,12 @@ const App = () => {
     { id: 4, name: "Viennese eggs", time: 36000 },
     { id: 5, name: "Fried eggs", time: 21000 },
   ]);
+  const [activity, setActivity] = useState("start");
+  const [startTime, setStartTime] = useState(mealsArray[0].time);
+  let [timerValue, setTimerValue] = useState(mealsArray[0].time);
+  const [intervalId, setIntervalId] = useState(0);
+  const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
+
   const changeTime = () => {
     setTimerValue(--timerValue);
   };
@@ -35,11 +37,12 @@ const App = () => {
     setActivity("start");
   };
 
-  const handlerMealButton = (time) => {
+  const handlerMealButton = (time, id) => {
     setStartTime(time);
     setTimerValue(time);
     clearInterval(intervalId);
     setActivity("start");
+    setActiveButtonId(id);
   };
   return (
     <div className="app">
@@ -53,6 +56,7 @@ const App = () => {
         timerValue={timerValue}
         mealsArray={mealsArray}
         handlerMealButton={handlerMealButton}
+        activeButtonId={activeButtonId}
       />
       {timerValue <= 0 && <h1>egg is ready!!!!</h1>}
     </div>

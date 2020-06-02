@@ -9,10 +9,15 @@ const Main = ({
   handlerClear,
   mealsArray,
   handlerMealButton,
+  activeButtonId,
 }) => {
   return (
     <main className="main">
-      <Header mealsArray={mealsArray} handlerMealButton={handlerMealButton} />
+      <Header
+        mealsArray={mealsArray}
+        handlerMealButton={handlerMealButton}
+        activeButtonId={activeButtonId}
+      />
       <Timer
         activity={activity}
         handlerButtonStart={handlerButtonStart}
