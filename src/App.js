@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import Main from "./Main/Main";
+import alarm from "./assets/sounds/alarm.mp3";
 
 const App = () => {
   const [mealsArray, setMealsArray] = useState([
@@ -13,17 +14,19 @@ const App = () => {
     { id: 5, name: "Fried eggs", time: 21000 },
   ]);
   const [activity, setActivity] = useState("start");
-  const [startTime, setStartTime] = useState(mealsArray[0].time);
-  let [timerValue, setTimerValue] = useState(mealsArray[0].time);
+  // const [startTime, setStartTime] = useState(mealsArray[0].time);
+  const [startTime, setStartTime] = useState(100);
+  // let [timerValue, setTimerValue] = useState(mealsArray[0].time);
+  let [timerValue, setTimerValue] = useState(100);
   const [intervalId, setIntervalId] = useState(0);
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
   const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
+  let interval;
 
   const changeTime = () => {
     setTimerValue(--timerValue);
   };
   const handlerStart = () => {
-    let interval;
     interval = setInterval(() => changeTime(), 10);
     setIntervalId(interval);
     setActivity("stop");
@@ -46,6 +49,23 @@ const App = () => {
     setActiveButtonId(id);
     setActualMeal(name);
   };
+
+  const playAudio = () => {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
+  };
+
+  const stopAudio = () => {
+    setTimerValue(startTime);
+  };
+
+  useEffect(() => {
+    if (timerValue <= 0) {
+      playAudio();
+      clearInterval(intervalId);
+    }
+  });
+
   return (
     <div className="app">
       {/* <form action="" className="form">
@@ -61,7 +81,16 @@ const App = () => {
         activeButtonId={activeButtonId}
         actualMeal={actualMeal}
       />
-      {timerValue <= 0 && <h1>egg is ready!!!!</h1>}
+
+      {timerValue <= 0 && (
+        <div>
+          <h1>{actualMeal} is ready!!!!</h1>{" "}
+          <audio className="audio-element">
+            <source src={alarm}></source>
+          </audio>
+          <button onClick={stopAudio}>wyłącz zegar</button>
+        </div>
+      )}
     </div>
   );
 };
