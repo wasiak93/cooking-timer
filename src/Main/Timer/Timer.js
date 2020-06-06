@@ -2,7 +2,7 @@ import React from "react";
 
 import Clock from "./Clock/Clock";
 import Title from "./Title/Title";
-import Buttons from "./Console/Console";
+import Console from "./Console/Console";
 import "./Timer.css";
 
 const Timer = ({
@@ -16,7 +16,7 @@ const Timer = ({
     <div className="timer">
       <Title actualMeal={actualMeal} />
       <Clock timerValue={timerValue} handlerClear={handlerClear} />
-      <Buttons
+      <Console
         activity={activity}
         handlerButtonStart={handlerButtonStart}
         handlerClear={handlerClear}

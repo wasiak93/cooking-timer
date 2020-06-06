@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../../../Button/Button";
+import "./Console.css";
 
 const Console = ({ activity, handlerButtonStart, handlerClear }) => {
   const buttonsArray = [
@@ -13,7 +14,7 @@ const Console = ({ activity, handlerButtonStart, handlerClear }) => {
     },
     {
       id: 1,
-      activity: activity,
+      activity: "stop",
       handler: handlerClear,
       active: false,
       classEnd: "console",
@@ -30,7 +31,7 @@ const Console = ({ activity, handlerButtonStart, handlerClear }) => {
       />
     )
   );
-  return <div className="buttons">{buttons}</div>;
+  return <div className="console">{buttons}</div>;
 };
 
 export default Console;
