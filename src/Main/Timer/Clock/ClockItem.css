@@ -1,0 +1,26 @@
+.clock-item {
+  /* background-color: aqua; */
+  flex-basis: 33%;
+  /* border: 1px solid black; */
+}
+
+.clock-item__paragraph {
+  font-size: 12px;
+}
+
+
+.clock-item__paragraph--bigger {
+  font-size: 70px;
+  font-weight: 700;
+  margin: 20px 0px 10px;
+}
+
+@media (min-width: 1200px) {
+  .clock-item__paragraph {
+    font-size: 24px;
+  }
+
+  .clock-item__paragraph--bigger {
+    font-size: 100px;
+  }
+}

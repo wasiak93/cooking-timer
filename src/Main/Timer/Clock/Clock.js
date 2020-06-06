@@ -1,8 +1,9 @@
 import React from "react";
 import "./Clock.css";
+import ClockItem from "./ClockItem";
 
 const Clock = ({ timerValue }) => {
-  // const hours = Math.floor(timerValue / (60 * 60))
+  // const hours = Math.floor(timerValue / 60 / 60 / 100)
   //   .toString()
   //   .padStart(2, 0);
   let minutes = 0;
@@ -19,14 +20,18 @@ const Clock = ({ timerValue }) => {
       .toString()
       .padStart(2, 0);
   }
-  return (
-    <div className="clock">
-      {/* <div className="clock__item">{hours}</div> */}
-      <div className="clock__item">{minutes}</div>
-      <div className="clock__item">{seconds}</div>
-      <div className="clock__item">{cseconds}</div>
-    </div>
-  );
+  const clockItemsArray = [
+    // { id: 0, name: "hours", value: hours },
+    { id: 1, name: "minutes", value: minutes },
+    { id: 2, name: "seconds", value: seconds },
+    { id: 3, name: "hundredths of a second", value: cseconds },
+  ];
+
+  const clockItems = clockItemsArray.map((item) => (
+    <ClockItem key={item.id} {...item} />
+  ));
+
+  return <div className="clock">{clockItems}</div>;
 };
 
 export default Clock;

@@ -11,6 +11,7 @@ const Main = ({
   mealsArray,
   handlerMealButton,
   activeButtonId,
+  actualMeal,
 }) => {
   return (
     <main className="main">
@@ -24,6 +25,7 @@ const Main = ({
         handlerButtonStart={handlerButtonStart}
         handlerClear={handlerClear}
         timerValue={timerValue}
+        actualMeal={actualMeal}
       />
     </main>
   );

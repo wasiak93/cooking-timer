@@ -17,6 +17,7 @@ const App = () => {
   let [timerValue, setTimerValue] = useState(mealsArray[0].time);
   const [intervalId, setIntervalId] = useState(0);
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
+  const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
 
   const changeTime = () => {
     setTimerValue(--timerValue);
@@ -37,18 +38,19 @@ const App = () => {
     setActivity("start");
   };
 
-  const handlerMealButton = (time, id) => {
+  const handlerMealButton = (time, id, name) => {
     setStartTime(time);
     setTimerValue(time);
     clearInterval(intervalId);
     setActivity("start");
     setActiveButtonId(id);
+    setActualMeal(name);
   };
   return (
     <div className="app">
-      <form action="" className="form">
+      {/* <form action="" className="form">
         form
-      </form>
+      </form> */}
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
@@ -57,6 +59,7 @@ const App = () => {
         mealsArray={mealsArray}
         handlerMealButton={handlerMealButton}
         activeButtonId={activeButtonId}
+        actualMeal={actualMeal}
       />
       {timerValue <= 0 && <h1>egg is ready!!!!</h1>}
     </div>

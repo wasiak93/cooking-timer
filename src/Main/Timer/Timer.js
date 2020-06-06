@@ -5,10 +5,16 @@ import Title from "./Title/Title";
 import Buttons from "./Console/Console";
 import "./Timer.css";
 
-const Timer = ({ timerValue, activity, handlerButtonStart, handlerClear }) => {
+const Timer = ({
+  timerValue,
+  activity,
+  handlerButtonStart,
+  handlerClear,
+  actualMeal,
+}) => {
   return (
     <div className="timer">
-      <Title />
+      <Title actualMeal={actualMeal} />
       <Clock timerValue={timerValue} handlerClear={handlerClear} />
       <Buttons
         activity={activity}

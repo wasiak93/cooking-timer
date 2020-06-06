@@ -7,9 +7,10 @@ const Header = ({ mealsArray, handlerMealButton, activeButtonId }) => {
     <Button
       key={id}
       time={time}
-      handler={() => handlerMealButton(time, id)}
+      handler={() => handlerMealButton(time, id, name)}
       activity={name}
       active={activeButtonId === id ? true : false}
+      classEnd="list"
     />
   ));
   return <div className="header">{meals}</div>;

@@ -1,6 +1,54 @@
-.button {}
+.button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s;
+  background-color: #FCCEA0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.button:hover {
+  background-color: #EDBA87;
+}
+
+.button--console {
+  background-color: white;
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.button--active,
+.button--active:nth-child(odd),
+.header .button--active:hover {
+  background-color: #FA7A5A;
+}
 
 
-.button--active {
-  background-color: red;
+@media (min-width:1200px) {
+  .button--list {
+    width: 100%;
+    margin: 0px;
+    padding: 20px 10px;
+    font-size: 20px;
+    border-radius: 0px;
+  }
+
+  .button--list:nth-child(odd):hover {
+    background-color: #EDBA87;
+  }
+
+  .button--list:nth-child(odd) {
+    background-color: #FEEDDC;
+  }
+
+  .button--active:nth-child(odd),
+  .header .button--active:hover {
+    background-color: #FA7A5A
+  }
 }
