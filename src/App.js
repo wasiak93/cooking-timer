@@ -81,9 +81,9 @@ const App = () => {
         activeButtonId={activeButtonId}
         actualMeal={actualMeal}
       />
-      {/* {timerValue <= 0 &&      ( */}
-      <Alarm actualMeal={actualMeal} stopAudio={stopAudio} />
-      {/* )} */}
+      {timerValue <= 0 && (
+        <Alarm actualMeal={actualMeal} stopAudio={stopAudio} />
+      )}
     </div>
   );
 };
