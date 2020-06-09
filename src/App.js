@@ -14,10 +14,10 @@ const App = () => {
     { id: 5, name: "Fried eggs", time: 21000 },
   ]);
   const [activity, setActivity] = useState("start");
-  // const [startTime, setStartTime] = useState(mealsArray[0].time);
-  const [startTime, setStartTime] = useState(100);
-  // let [timerValue, setTimerValue] = useState(mealsArray[0].time);
-  let [timerValue, setTimerValue] = useState(100);
+  const [startTime, setStartTime] = useState(mealsArray[0].time);
+  // const [startTime, setStartTime] = useState(100);
+  let [timerValue, setTimerValue] = useState(mealsArray[0].time);
+  // let [timerValue, setTimerValue] = useState(100);
   const [intervalId, setIntervalId] = useState(0);
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
   const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
@@ -65,12 +65,28 @@ const App = () => {
       clearInterval(intervalId);
     }
   });
+  const [inputsArray, setInputArray] = useState([
+    { id: 0, text: "Meal name", idValue: "name", value: "aaa", type: "text" },
+    {
+      id: 1,
+      text: "Time(in seconds)",
+      idValue: "time",
+      value: 21,
+      type: "number",
+    },
+  ]);
 
+  const inputs = inputsArray.map(({ idValue, text, type, id, value }) => (
+    <div className="form__item" key={id}>
+      <label htmlFor={idValue}>{text}</label>
+      <input type={type} id={idValue} value={value} />
+    </div>
+  ));
   return (
     <div className="app">
-      {/* <form action="" className="form">
-        form
-      </form> */}
+      <form action="" className="form">
+        {inputs}
+      </form>
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
