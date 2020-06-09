@@ -71,6 +71,7 @@ const App = () => {
       {/* <form action="" className="form">
         form
       </form> */}
+      <p>test</p>
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
@@ -84,7 +85,7 @@ const App = () => {
 
       {timerValue <= 0 && (
         <div>
-          <h1>{actualMeal} is ready!!!!</h1>{" "}
+          <h1>{actualMeal} is ready!!!!</h1>
           <audio className="audio-element">
             <source src={alarm}></source>
           </audio>
