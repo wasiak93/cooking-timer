@@ -14,7 +14,7 @@ const Console = ({ activity, handlerButtonStart, handlerClear }) => {
     },
     {
       id: 1,
-      activity: "stop",
+      activity: "clear",
       handler: handlerClear,
       active: false,
       classEnd: "console",

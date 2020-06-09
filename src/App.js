@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import Main from "./Main/Main";
-import alarm from "./assets/sounds/alarm.mp3";
+import Alarm from "./Alarm/Alarm";
 
 const App = () => {
   const [mealsArray, setMealsArray] = useState([
@@ -71,7 +71,6 @@ const App = () => {
       {/* <form action="" className="form">
         form
       </form> */}
-      <p>test</p>
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
@@ -82,16 +81,9 @@ const App = () => {
         activeButtonId={activeButtonId}
         actualMeal={actualMeal}
       />
-
-      {timerValue <= 0 && (
-        <div>
-          <h1>{actualMeal} is ready!!!!</h1>
-          <audio className="audio-element">
-            <source src={alarm}></source>
-          </audio>
-          <button onClick={stopAudio}>wyłącz zegar</button>
-        </div>
-      )}
+      {/* {timerValue <= 0 &&      ( */}
+      <Alarm actualMeal={actualMeal} stopAudio={stopAudio} />
+      {/* )} */}
     </div>
   );
 };

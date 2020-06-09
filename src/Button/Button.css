@@ -28,6 +28,14 @@
   background-color: #FA7A5A;
 }
 
+.button--alarm {
+  padding: 10px 40px;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: red;
+  color: white;
+}
 
 @media (min-width:1200px) {
   .button--list {
@@ -54,5 +62,9 @@
   .button--console {
     padding: 10px 20px;
     font-size: 24px;
+  }
+
+  .button--alarm {
+    font-size: 46px;
   }
 }
