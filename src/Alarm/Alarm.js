@@ -2,6 +2,7 @@ import React from "react";
 
 import Button from "../Button/Button";
 import Audio from "./Audio";
+import "./Alarm.css";
 
 const Alarm = ({ actualMeal, stopAudio }) => {
   return (
