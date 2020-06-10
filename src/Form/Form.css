@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+
+.form__item {
+  display: flex;
+  align-items: center;
+  font-weight: wrap;
+  margin: 10px;
+}
+
+.label {
+  width: 140px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.input {
+  width: 120px;
+  font-family: 'Roboto', sans-serif;
+  padding: 2px;
+}

@@ -23,13 +23,21 @@ const App = () => {
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
   const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
   const [inputsArray, setInputsArray] = useState([
-    { id: 0, text: "Meal name", idValue: "name", value: "", type: "text" },
+    {
+      id: 0,
+      text: "Meal name",
+      idValue: "name",
+      value: "",
+      type: "text",
+      info: "name minimum 2 signs!",
+    },
     {
       id: 1,
       text: "Time(in seconds)",
       idValue: "time",
       value: 1,
       type: "number",
+      info: " time more then 10 seconds!",
     },
   ]);
   const [mealId, setMealId] = useState(mealsArray.length);
@@ -119,12 +127,7 @@ const App = () => {
         inputsArray={inputsArray}
         handlerInput={handlerInput}
       />
-      <div className="info">
-        <p>
-          {inputsArray[0].value.length < 2 && "name minimum 2 signs!"}
-          {inputsArray[1].value < 10 && " time more then 10 seconds!"}
-        </p>
-      </div>
+      <div></div>
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
