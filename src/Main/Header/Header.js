@@ -10,7 +10,7 @@ const Header = ({ mealsArray, handlerMealButton, activeButtonId }) => {
       handler={() => handlerMealButton(time, id, name)}
       activity={name}
       active={activeButtonId === id ? true : false}
-      classEnd="list"
+      blockName="header"
     />
   ));
   return <div className="header">{meals}</div>;

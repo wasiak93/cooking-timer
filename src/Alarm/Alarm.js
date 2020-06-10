@@ -9,7 +9,7 @@ const Alarm = ({ actualMeal, stopAudio }) => {
     <div className="alarm">
       <p className="alarm__paragraph">{actualMeal} is ready!!!!</p>
       <Audio />
-      <Button activity="turn off alarm" handler={stopAudio} classEnd="alarm" />
+      <Button activity="turn off alarm" handler={stopAudio} blockName="alarm" />
     </div>
   );
 };

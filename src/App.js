@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Main from "./Main/Main";
 import Alarm from "./Alarm/Alarm";
+import Form from "./Form/Form";
 
 const App = () => {
   const [mealsArray, setMealsArray] = useState([
@@ -111,29 +112,16 @@ const App = () => {
     }
   };
 
-  const inputs = inputsArray.map(({ idValue, text, type, id, value }) => (
-    <div className="form__item" key={id}>
-      <label htmlFor={idValue}>{text}</label>
-      <input
-        type={type}
-        id={idValue}
-        value={value}
-        onChange={(e) => handlerInput(e, id)}
-      />
-    </div>
-  ));
   return (
     <div className="app">
-      <form action="" className="form" onSubmit={addMeal}>
-        {inputs}
-        <button>add meal</button>
-
-        {/* {inputsArray[0].value.length < 2 && <p>name minimum 2 signs!!!</p>} */}
-        {/* {inputsArray[1].value < 10 && <p>time more then 10 seconds!</p>} */}
-      </form>
+      <Form
+        addMeal={addMeal}
+        inputsArray={inputsArray}
+        handlerInput={handlerInput}
+      />
       <div className="info">
         <p>
-          {inputsArray[0].value.length < 2 && "name minimum 2 signs!!!"}
+          {inputsArray[0].value.length < 2 && "name minimum 2 signs!"}
           {inputsArray[1].value < 10 && " time more then 10 seconds!"}
         </p>
       </div>

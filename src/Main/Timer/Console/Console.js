@@ -10,24 +10,24 @@ const Console = ({ activity, handlerButtonStart, handlerClear }) => {
       activity: activity,
       handler: handlerButtonStart,
       active: false,
-      classEnd: "console",
+      blockName: "console",
     },
     {
       id: 1,
       activity: "clear",
       handler: handlerClear,
       active: false,
-      classEnd: "console",
+      blockName: "console",
     },
   ];
   const buttons = buttonsArray.map(
-    ({ id, activity, handler, active, classEnd }) => (
+    ({ id, activity, handler, active, blockName }) => (
       <Button
         key={id}
         activity={activity}
         handler={handler}
         active={active}
-        classEnd={classEnd}
+        blockName={blockName}
       />
     )
   );
