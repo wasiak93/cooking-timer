@@ -21,6 +21,18 @@ const App = () => {
   const [intervalId, setIntervalId] = useState(0);
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
   const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
+  const [inputsArray, setInputsArray] = useState([
+    { id: 0, text: "Meal name", idValue: "name", value: "", type: "text" },
+    {
+      id: 1,
+      text: "Time(in seconds)",
+      idValue: "time",
+      value: 1,
+      type: "number",
+    },
+  ]);
+  const [mealId, setMealId] = useState(mealsArray.length);
+
   let interval;
 
   const changeTime = () => {
@@ -65,28 +77,66 @@ const App = () => {
       clearInterval(intervalId);
     }
   });
-  const [inputsArray, setInputArray] = useState([
-    { id: 0, text: "Meal name", idValue: "name", value: "aaa", type: "text" },
-    {
-      id: 1,
-      text: "Time(in seconds)",
-      idValue: "time",
-      value: 21,
-      type: "number",
-    },
-  ]);
+
+  const handlerInput = (e, id) => {
+    const value = e.target.value;
+
+    const newInputsArray = inputsArray.map((input) =>
+      input.id === id ? { ...input, value } : input
+    );
+
+    setInputsArray(newInputsArray);
+  };
+
+  const addMeal = (e) => {
+    e.preventDefault();
+    if (inputsArray[0].value.length >= 2 && inputsArray[1].value >= 10) {
+      let newId = mealId;
+      newId++;
+
+      setMealsArray([
+        ...mealsArray,
+        {
+          id: mealId,
+          name: inputsArray[0].value,
+          time: inputsArray[1].value,
+        },
+      ]);
+
+      setMealId(newId);
+      const newInputsArray = inputsArray.map((input) =>
+        input.type === "text" ? { ...input, value: "" } : { ...input, value: 0 }
+      );
+      setInputsArray(newInputsArray);
+    }
+  };
 
   const inputs = inputsArray.map(({ idValue, text, type, id, value }) => (
     <div className="form__item" key={id}>
       <label htmlFor={idValue}>{text}</label>
-      <input type={type} id={idValue} value={value} />
+      <input
+        type={type}
+        id={idValue}
+        value={value}
+        onChange={(e) => handlerInput(e, id)}
+      />
     </div>
   ));
   return (
     <div className="app">
-      <form action="" className="form">
+      <form action="" className="form" onSubmit={addMeal}>
         {inputs}
+        <button>add meal</button>
+
+        {/* {inputsArray[0].value.length < 2 && <p>name minimum 2 signs!!!</p>} */}
+        {/* {inputsArray[1].value < 10 && <p>time more then 10 seconds!</p>} */}
       </form>
+      <div className="info">
+        <p>
+          {inputsArray[0].value.length < 2 && "name minimum 2 signs!!!"}
+          {inputsArray[1].value < 10 && " time more then 10 seconds!"}
+        </p>
+      </div>
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
