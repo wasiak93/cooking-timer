@@ -6,13 +6,13 @@
   outline: none;
   border-radius: 3px;
   cursor: pointer;
-  transition: .3s;
-  background-color: #FCCEA0;
-  font-family: 'Roboto', sans-serif;
+  transition: 0.3s;
+  background-color: #fccea0;
+  font-family: "Roboto", sans-serif;
 }
 
 .button:hover {
-  background-color: #EDBA87;
+  background-color: #edba87;
 }
 
 .console__button,
@@ -27,7 +27,7 @@
 .button--active,
 .button--active:nth-child(odd),
 .header .button--active:hover {
-  background-color: #FA7A5A;
+  background-color: #fa7a5a;
 }
 
 .alarm__button {
@@ -45,7 +45,7 @@
   font-size: 14px;
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .header__button {
     width: 100%;
     margin: 0px;
@@ -55,16 +55,16 @@
   }
 
   .header__button:nth-child(odd):hover {
-    background-color: #EDBA87;
+    background-color: #edba87;
   }
 
   .header__button:nth-child(odd) {
-    background-color: #FEEDDC;
+    background-color: #feeddc;
   }
 
   .button--active:nth-child(odd),
   .header .button--active:hover {
-    background-color: #FA7A5A
+    background-color: #fa7a5a;
   }
 
   .console__button,
@@ -75,6 +75,7 @@
 
   .form__button {
     font-size: 16px;
+    height: 40px;
   }
 
   .alarm__button {

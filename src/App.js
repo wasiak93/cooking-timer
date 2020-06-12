@@ -35,7 +35,7 @@ const App = () => {
       id: 1,
       text: "Time(in seconds)",
       idValue: "time",
-      value: 1,
+      value: 10,
       type: "number",
       info: " time more then 10 seconds!",
     },
@@ -114,7 +114,9 @@ const App = () => {
 
       setMealId(newId);
       const newInputsArray = inputsArray.map((input) =>
-        input.type === "text" ? { ...input, value: "" } : { ...input, value: 0 }
+        input.type === "text"
+          ? { ...input, value: "" }
+          : { ...input, value: 10 }
       );
       setInputsArray(newInputsArray);
     }
