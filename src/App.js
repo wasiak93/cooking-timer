@@ -77,9 +77,10 @@ const App = () => {
     audioEl.play();
   };
 
-  const stopAudio = () => {
-    setTimerValue(startTime);
-  };
+  // const stopAudio = () => {
+  //   setTimerValue(startTime);
+  //   handlerStop();
+  // };
 
   useEffect(() => {
     if (timerValue <= 0) {
@@ -90,6 +91,7 @@ const App = () => {
 
   const handlerInput = (e, id) => {
     const value = e.target.value;
+    setInfoIsActive(false);
 
     const newInputsArray = inputsArray.map((input) =>
       input.id === id ? { ...input, value } : input
@@ -109,7 +111,7 @@ const App = () => {
         {
           id: mealId,
           name: inputsArray[0].value,
-          time: inputsArray[1].value,
+          time: inputsArray[1].value * 100,
         },
       ]);
 
@@ -144,7 +146,7 @@ const App = () => {
         actualMeal={actualMeal}
       />
       {timerValue <= 0 && (
-        <Alarm actualMeal={actualMeal} stopAudio={stopAudio} />
+        <Alarm actualMeal={actualMeal} stopAudio={handlerClear} />
       )}
     </div>
   );

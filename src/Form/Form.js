@@ -23,7 +23,11 @@ const Form = ({ addMeal, inputsArray, handlerInput, infoIsActive }) => {
         <div className="form__inputs">{inputs}</div>
         <Button blockName="form" activity="add meal" />
       </div>
-      {infoIsActive && <div className="form__info">info info</div>}
+      {infoIsActive && (
+        <div className="form__info">
+          meal name minimum 2 signs, time minimum 10 seconds
+        </div>
+      )}
     </form>
   );
 };
