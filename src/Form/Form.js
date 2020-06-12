@@ -2,7 +2,7 @@ import React from "react";
 import "./Form.css";
 import Button from "../Button/Button";
 
-const Form = ({ addMeal, inputsArray, handlerInput }) => {
+const Form = ({ addMeal, inputsArray, handlerInput, infoIsActive }) => {
   const inputs = inputsArray.map(({ idValue, text, type, id, value, info }) => (
     <div className="form__item" key={id}>
       <label htmlFor={idValue} className="label">
@@ -19,8 +19,11 @@ const Form = ({ addMeal, inputsArray, handlerInput }) => {
   ));
   return (
     <form action="" className="form" onSubmit={addMeal}>
-      <div className="form__inputs">{inputs}</div>
-      <Button blockName="form" activity="add meal" />
+      <div className="form__inputs-wrapper">
+        <div className="form__inputs">{inputs}</div>
+        <Button blockName="form" activity="add meal" />
+      </div>
+      {infoIsActive && <div className="form__info">info info</div>}
     </form>
   );
 };

@@ -41,6 +41,7 @@ const App = () => {
     },
   ]);
   const [mealId, setMealId] = useState(mealsArray.length);
+  const [infoIsActive, setInfoIsActive] = useState(false);
 
   let interval;
 
@@ -119,7 +120,8 @@ const App = () => {
           : { ...input, value: 10 }
       );
       setInputsArray(newInputsArray);
-    }
+      setInfoIsActive(false);
+    } else setInfoIsActive(true);
   };
 
   return (
@@ -128,8 +130,9 @@ const App = () => {
         addMeal={addMeal}
         inputsArray={inputsArray}
         handlerInput={handlerInput}
+        infoIsActive={infoIsActive}
       />
-      <div></div>
+
       <Main
         activity={activity}
         handlerButtonStart={activity === "start" ? handlerStart : handlerStop}
