@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cooking-timer/precache-manifest.598d593547be8dd7a2d125a0e9af31b0.js"
+  "/cooking-timer/precache-manifest.c7e40126aeb715b96eacd44ea8297677.js"
 );
 
 self.addEventListener('message', (event) => {
