@@ -5,14 +5,14 @@
   margin-top: 20px;
   width: 100%;
   max-width: 450px;
+  flex-grow: 1;
+  justify-content: center;
 }
 
-@media (min-width:1200px) {
+@media (min-width:800px) {
   .timer {
     margin-top: 0px;
     max-width: none;
-    width: 0;
     justify-self: stretch;
-    flex-grow: 1;
   }
 }

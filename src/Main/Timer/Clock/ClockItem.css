@@ -14,7 +14,7 @@
   margin: 20px 0px 10px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
   .clock-item__paragraph {
     font-size: 24px;
   }
