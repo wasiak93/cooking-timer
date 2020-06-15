@@ -16,9 +16,7 @@ const App = () => {
   ]);
   const [activity, setActivity] = useState("start");
   const [startTime, setStartTime] = useState(mealsArray[0].time);
-  // const [startTime, setStartTime] = useState(100);
   let [timerValue, setTimerValue] = useState(mealsArray[0].time);
-  // let [timerValue, setTimerValue] = useState(100);
   const [intervalId, setIntervalId] = useState(0);
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
   const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
@@ -76,11 +74,6 @@ const App = () => {
     const audioEl = document.getElementsByClassName("audio-element")[0];
     audioEl.play();
   };
-
-  // const stopAudio = () => {
-  //   setTimerValue(startTime);
-  //   handlerStop();
-  // };
 
   useEffect(() => {
     if (timerValue <= 0) {

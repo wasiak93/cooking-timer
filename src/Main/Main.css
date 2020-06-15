@@ -1,15 +1,9 @@
 .main {
-  /* background-color: grey; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   align-items: center;
-  /* flex-wrap: wrap; */
   flex-grow: 1;
   width: 100%;
-  /* justify-content: center; */
-  /* height: 100%; */
-  /* justify-content: stretch; */
 }
 
 
@@ -18,9 +12,5 @@
   .main {
     flex-direction: row;
     max-width: 1200px;
-    /* justify-content: stretch; */
-    /* justify-content: center */
-    /* align-items: flex-start; */
-    /* justify-content: center; */
   }
 }
