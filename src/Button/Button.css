@@ -50,7 +50,7 @@
   background-color: #006000;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 1024px) {
   .console__button:hover {
     background-color: white;
   }
