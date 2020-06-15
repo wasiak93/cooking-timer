@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "373156a131eb177ebc891fbbc29f5bf3",
+    "revision": "54a319562112f20811fa6934e8e275ad",
     "url": "/cooking-timer/index.html"
   },
   {
-    "revision": "dd9c87c7345c1a5307d7",
-    "url": "/cooking-timer/static/css/main.d7aa2758.chunk.css"
+    "revision": "70c02fba1947f1c6755b",
+    "url": "/cooking-timer/static/css/main.993aa3aa.chunk.css"
   },
   {
     "revision": "e7e57f080fcdd54d8cb1",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cooking-timer/static/js/2.37074170.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dd9c87c7345c1a5307d7",
+    "revision": "70c02fba1947f1c6755b",
     "url": "/cooking-timer/static/js/main.bbb6e4b7.chunk.js"
   },
   {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cooking-timer/static/css/main.d7aa2758.chunk.css",
+    "main.css": "/cooking-timer/static/css/main.993aa3aa.chunk.css",
     "main.js": "/cooking-timer/static/js/main.bbb6e4b7.chunk.js",
     "main.js.map": "/cooking-timer/static/js/main.bbb6e4b7.chunk.js.map",
     "runtime-main.js": "/cooking-timer/static/js/runtime-main.d9b4a05f.js",
@@ -8,16 +8,16 @@
     "static/js/2.37074170.chunk.js": "/cooking-timer/static/js/2.37074170.chunk.js",
     "static/js/2.37074170.chunk.js.map": "/cooking-timer/static/js/2.37074170.chunk.js.map",
     "index.html": "/cooking-timer/index.html",
-    "precache-manifest.1784188d94326f2a7c071b34f85946e3.js": "/cooking-timer/precache-manifest.1784188d94326f2a7c071b34f85946e3.js",
+    "precache-manifest.29990bda0e125929ebba6d0bbe98f84d.js": "/cooking-timer/precache-manifest.29990bda0e125929ebba6d0bbe98f84d.js",
     "service-worker.js": "/cooking-timer/service-worker.js",
-    "static/css/main.d7aa2758.chunk.css.map": "/cooking-timer/static/css/main.d7aa2758.chunk.css.map",
+    "static/css/main.993aa3aa.chunk.css.map": "/cooking-timer/static/css/main.993aa3aa.chunk.css.map",
     "static/js/2.37074170.chunk.js.LICENSE.txt": "/cooking-timer/static/js/2.37074170.chunk.js.LICENSE.txt",
     "static/media/alarm.mp3": "/cooking-timer/static/media/alarm.fe098666.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.d9b4a05f.js",
     "static/js/2.37074170.chunk.js",
-    "static/css/main.d7aa2758.chunk.css",
+    "static/css/main.993aa3aa.chunk.css",
     "static/js/main.bbb6e4b7.chunk.js"
   ]
 }
