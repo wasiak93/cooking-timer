@@ -24,6 +24,7 @@
   font-size: 18px;
 }
 
+
 .button--active,
 .button--active:nth-child(odd),
 .header .button--active:hover {
@@ -43,6 +44,20 @@
   background-color: green;
   color: white;
   font-size: 14px;
+}
+
+.form__button:hover {
+  background-color: #006000;
+}
+
+@media (max-width: 540px) {
+  .console__button:hover {
+    background-color: white;
+  }
+
+  .form__button:hover {
+    background-color: green;
+  }
 }
 
 @media (min-width: 1200px) {
