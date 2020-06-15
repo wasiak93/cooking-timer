@@ -1,8 +1,5 @@
 .clock {
   display: flex;
   justify-content: space-evenly;
-  /* background-color: grey; */
   max-width: 450px;
-  /* margin: 0 auto; */
-
 }
