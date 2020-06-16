@@ -57,15 +57,13 @@ const App = () => {
   };
   const handlerClear = () => {
     setTimerValue(startTime);
-    clearInterval(intervalId);
-    setActivity("start");
+    handlerStop();
   };
 
   const handlerMealButton = (time, id, name) => {
     setStartTime(time);
     setTimerValue(time);
-    clearInterval(intervalId);
-    setActivity("start");
+    handlerStop();
     setActiveButtonId(id);
     setActualMeal(name);
   };
