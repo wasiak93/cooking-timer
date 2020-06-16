@@ -16,7 +16,7 @@ const App = () => {
   ]);
   const [activity, setActivity] = useState("start");
   const [startTime, setStartTime] = useState(mealsArray[0].time);
-  let [timerValue, setTimerValue] = useState(mealsArray[0].time);
+  const [timerValue, setTimerValue] = useState(mealsArray[0].time);
   const [intervalId, setIntervalId] = useState(0);
   const [activeButtonId, setActiveButtonId] = useState(mealsArray[0].id);
   const [actualMeal, setActualMeal] = useState(mealsArray[0].name);
@@ -44,7 +44,7 @@ const App = () => {
   let interval;
 
   const changeTime = () => {
-    setTimerValue(--timerValue);
+    setTimerValue((prevTimerValue) => prevTimerValue - 1);
   };
   const handlerStart = () => {
     interval = setInterval(() => changeTime(), 10);
@@ -99,14 +99,16 @@ const App = () => {
       let newId = mealId;
       newId++;
 
-      setMealsArray([
-        ...mealsArray,
-        {
-          id: mealId,
-          name: inputsArray[0].value,
-          time: inputsArray[1].value * 100,
-        },
-      ]);
+      setMealsArray((prevMealsArray) => {
+        return [
+          ...prevMealsArray,
+          {
+            id: mealId,
+            name: inputsArray[0].value,
+            time: inputsArray[1].value * 100,
+          },
+        ];
+      });
 
       setMealId(newId);
       const newInputsArray = inputsArray.map((input) =>
