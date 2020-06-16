@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import Main from "./Main/Main";
@@ -68,18 +68,6 @@ const App = () => {
     setActualMeal(name);
   };
 
-  const playAudio = () => {
-    const audioEl = document.getElementsByClassName("audio-element")[0];
-    audioEl.play();
-  };
-
-  useEffect(() => {
-    if (timerValue <= 0) {
-      playAudio();
-      clearInterval(intervalId);
-    }
-  });
-
   const handlerInput = (e, id) => {
     const value = e.target.value;
     setInfoIsActive(false);
@@ -118,7 +106,9 @@ const App = () => {
       setInfoIsActive(false);
     } else setInfoIsActive(true);
   };
-
+  // const handlerSetAudio = (audioRef) => {
+  //   setAudioRef(audioRef);
+  // };
   return (
     <div className="app">
       <Form
@@ -139,7 +129,12 @@ const App = () => {
         actualMeal={actualMeal}
       />
       {timerValue <= 0 && (
-        <Alarm actualMeal={actualMeal} stopAudio={handlerClear} />
+        <Alarm
+          actualMeal={actualMeal}
+          stopAudio={handlerClear}
+          timerValue={timerValue}
+          intervalId={intervalId}
+        />
       )}
     </div>
   );
